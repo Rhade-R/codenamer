@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="codenamer.css" rel="stylesheet">
+	</head>
+	<body>
+		<article id="about">
+			<h3>PRIVACY</h3>
+			<p>Read on. I promise this will be interesting.</p>
+			<section>
+				<h4>YOUR PERSONAL INFORMATION NEVER LEAVES YOUR BROWSER</h4>
+				<p>This a purely client-side web app. There is no server-side code running in the background. There is no backend database. Still skeptical? load the <a href="./main.htm">main page</a>, disconnect from the Internet, and then enter your name and generate your cryptonyms. It will still work exactly the same, even if you are offline. That would not be possible if anything needed to be sent from your browser to a remote server at any point.</p>
+			</section>
+			<section>
+				<h4>YOUR NAME CANNOT BE FIGURED OUT FROM YOUR CRYPTONYMS</h4>
+				<p>The whole purpose of this app is to allow users to generate cryptonyms based on their real names without compromising their anonymity in any way. The way this works is by passing the entered names through a cryptographically strong hashing function (Scrypt), and then looking up the cryptonyms on a series of lists, using the first four bytes of the hash as the index.</p>
+				<p>Hashing functions are one-way mathematical algorithms. This means that it is not possible to use the output of a hashing function (the hash) to figure out the input (your real name, in this case) by inverting the flow of the algorithm.</p>
+				<p>The purpose of the optional <i>secret</i> field is to thwart potential <i>dictionary attacks</i>, by introducing a variable in the equation that is arbitrary in nature. Merely by existing, it leaves absolutely no practical approaches left for attackers to try to figure out your name.</p>
+			</section>
+			<section>
+				<h3>THIS CLAYMORE</h3>
+				<p>Yes, that's a terrible pun. Sue me.
+				<p>In spite of how seriously I (the developer) take security and privacy, this is still a mostly-for-fun site. I will not be held responsible for any loss or damage caused by the misuse of this software. For example, if someone hacks one of your important accounts because you had the brilliant idea of using one of these cryptonyms as a password, that's on you.</p>
+				<p>You can find the actual disclaimer in BORING LEGAL JARGON within the <a href="https://github.com/Rhade-R/codenamer/raw/main/COPYING.txt">license.</a></p>
+			</section>
+			<section>
+				<h3>WHY BOTHER CREATING THIS SITE?</h3>
+				<p>Why not? I am able to, it is decent practice, and it is a fun way to introduce people to some security concepts, as well as a simple example of what hashes can be used for. The original idea came from this image I found in a popular online platform:</p>
+				<img src="bin/whatanimecharacterareyou.png"></img>
+				<p>Some users, including myself, refuse to participate in that sort of (admittedly silly) games, because they require us to provide a hint about our real names, potentially sacrificing our anonymity. Thus, I came up with this.</p>
+			</section>
+			<section>
+				<h4>WHY SHOULD WE CARE ABOUT OUR PRIVACY?</h4>
+				<p>The world is a dangerous place. So is the Internet. That alone should be enough of a reason, but privacy also happens to be one of our fundamental rights as human beings.</p>
+				<p>This silly site aims to be what some of us wish the whole Internet were like. You don't see me promising to respect your privacy, because there is no need for promises, since the <a href="https://github.com/Rhade-R/codenamer">source code</a> is free for everyone to check. There is no need for trust when claims are verifiable, and this becomes all the more relevant when we talk about security mechanisms.</p>
+				<p>Ask your search engine of choice if you want to learn more. There are way better preachers than me out there.</p>
+			</section>
+		</article>
+	</body>
+</html>

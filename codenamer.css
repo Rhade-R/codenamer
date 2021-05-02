@@ -1,0 +1,177 @@
+* {
+	box-sizing: border-box;
+	/* border: 1px solid red; */
+	/* ^ for testing purposes */
+}
+:root {
+	--main-color: #0FA;
+	--a-color: #AFE;
+	--neon-glow: -1px -1px 0.5em var(--main-color), 1px 1px 0.5em var(--main-color);
+	background: radial-gradient(transparent, black), #021;
+	color: white;
+	font-size: 1.5vw;
+	font-family: sans-serif;
+	text-align: center;
+}
+.col, .row {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	/* align-content: space-evenly; */ /* doesn't affect nowrap containers */
+}
+.col {
+	flex-flow: column nowrap;
+	height: 100%;
+}
+.row {flex-flow: row nowrap;}
+.hidden {display: none;}
+.loader {
+	display: inline-block;
+	margin: auto;
+	border: 0.5em solid transparent;
+	border-top: 0.5em solid var(--main-color);
+	border-bottom: 0.5em solid var(--main-color);
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	animation: spin 1s linear infinite;
+}
+.fadein {
+	animation-name: fadein;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+[cont]::after {content: attr(cont);}
+fill {
+	min-height: 1px;
+	min-width: 1px;
+	display: inline;
+	flex-grow: 10;
+}
+h5 {
+	font-family: serif;
+	margin: 0;
+}
+span {margin: auto;}
+button, input {
+	border: none;
+	border-radius: 1em;
+	font-size: 0.8em;
+}
+button {
+	color: var(--main-color);
+	background: black;
+	font-weight: 700;
+	width: 10em;
+}
+button:not(:disabled):hover {
+	box-shadow: var(--neon-glow);
+	cursor: pointer;
+}
+button:disabled {opacity: 0.2;}
+input {
+	background: var(--main-color);
+	color: black;
+	outline: none;
+	text-align: center;
+	width: 30em;
+}
+footer a {
+	color: var(--a-color);
+	font-family: monospace;
+	font-size: 0.9em;
+}
+body {height: 95vh;}
+footer {border-top: 1px solid rgba(0,255,0,0.2);}
+a {text-decoration: none;}
+a:visited {color: var(--a-color);}
+a:hover {filter: brightness(110%);}
+input:focus {
+	box-shadow: var(--neon-glow);
+	font-weight: 700;
+	outline: inherit;
+	transition: 1s;
+}
+:placeholder-shown {
+	color: #333;
+	font-weight: lighter;
+}
+#about * {text-align: left;}
+#copyButton {margin-top: 1em;}
+#main {
+	height: 100%;
+	width: 100%;
+}
+#title {
+	margin: 0;
+	font-family: monospace;
+	font-size: 6.66vw;
+}
+#title::before {
+	animation-name: genFXb;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	content: attr(x);
+}
+#title::after {
+	animation-name: genFXa;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	content: attr(x);
+}
+#R::before {
+	animation: 4s infinite cursorFX;
+	content: "R";
+}
+#resultsWrapper span{
+	color: var(--main-color);
+	font-family: monospace;
+}
+#version::after {
+	top: 0;
+	left: 100;
+	right: 0;
+	bottom: 100;
+	position: fixed;
+}
+@keyframes genFXb {
+	from {content: "";}
+	20% {content: "";}
+	30% {content: "C";}
+	40% {content: "CO";}
+	50% {content: "COD";}
+	60% {content: "CODE";}
+	70% {content: "CODEN";}
+	80% {content: "CODENA";}
+	90% {content: "CODENAM";}
+	to {content: "CODENAME";}
+}
+@keyframes genFXa {
+	from {content: "00000000";}
+	20% {content: "01000011";}
+	30% {content: "1001111";}
+	40% {content: "000100";}
+	50% {content: "00101";}
+	60% {content: "1110";}
+	70% {content: "001";}
+	80% {content: "01";}
+	90% {content: "1";}
+	to {content: "";}
+}
+@keyframes cursorFX {
+	from {
+		background: white;
+		color: black;
+	}
+	to {background: inherit;}
+}
+@keyframes fadein {
+	from {opacity: 0;}
+	50% {opacity: 0;}
+	to {opacity: 1;}
+}
+@keyframes spin {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}

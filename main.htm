@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="codenamer.css" rel="stylesheet">
+	</head>
+	<body>
+		<span id="version"></span>
+		<div id="main" hidden>
+			<div class="col">
+				<div id="titleWrapper">
+					<h1 id="title"><span id="R"></span></h1>
+					<h5 class="fadein">Secure cryptonym generator.</h5>
+				</div>
+				<div id="fieldsWrapper" class="row">
+					<div id="fields" class="col">
+						<span>Name*</span>
+						<input id="name" type="text" placeholder="enter your name here">
+						<span>Last name*</span>
+						<input id="lname" type="text" placeholder="enter your last name here">
+						<span>Secret</span>
+						<input id="secret" type="password" placeholder="enter anything here (optional)">
+					</div>
+				</div>
+				<div id="buttonWrapper" class="row">
+					<button id="genButton" type="button" disabled>Generate</button>
+				</div>
+				<div id="resultsWrapper" class="col hidden">
+					<fill></fill>
+					<div class="row">
+						<span>Anime archetype:&nbsp;</span>
+						<span id="anime"></span>
+					</div>
+					<div class="row">
+						<span>Military codename:&nbsp;</span>
+						<span id="military"></span>
+					</div>
+					<button id="copyButton" type="button">Copy to Clipboard</button>
+					<fill></fill>
+				</div>
+			</div>
+			<footer class="row">
+				<a href="./about.htm" cont="Privacy/about"></a>
+				<a id="copyright" href="https://github.com/Rhade-R/codenamer/raw/main/COPYING.txt" cont="© Rhade"></a>
+				<a href="https://github.com/Rhade-R/codenamer" cont="Github"></a>
+			</footer>
+		</div>
+		<script src="codenamer.js"></script>
+		<script src="lib/lists/anime.js"></script>
+		<script src="lib/lists/military.js"></script>
+		<script src="lib/scrypt/scrypt-async.min.js"></script>
+		<!-- <script src="dict-building/dict_gen.js"></script> -->
+	</body>
+</html>
